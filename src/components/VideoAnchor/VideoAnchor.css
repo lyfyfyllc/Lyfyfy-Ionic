@@ -1,0 +1,81 @@
+.VA_main_container {
+  width: 100%;
+  z-index: 520;
+  height: 100vh;
+  position: fixed;
+    top: 0;
+    left: 0;
+  background: rgba(44, 44, 84, 0.8);
+}
+
+.VA_container {
+  width: 80%;
+  margin: auto;
+}
+
+.VA_MediaWrapper {
+  width: 75%;
+  padding: 2em;
+  margin: auto;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+  background: rgba(44, 44, 84, 1);
+
+  scrollbar-width: thin;
+}
+
+.MC_anchor_actions_container {
+  width: 100%;
+  z-index: 520;
+  display: flex;
+  position: sticky;
+    bottom: 0em;
+  text-align: center;
+}
+
+.MC_visit_container,
+.MC_close_anchor_container {
+  margin: auto;
+  text-align: center;
+}
+
+.MC_visit_btn,
+.MC_close_anchor_btn {
+  color: #fff;
+  padding: 1em;
+  border-radius: 10em;
+  background: rgba(112, 111, 211, 1);
+}
+
+.VA_loading_container {
+  width: 100%;
+  text-align: center;
+  position: relative;
+    top: 50vh;
+}
+
+.VA_loader {
+  color: #fff;
+}
+
+@media only screen and (max-width: 850px) {
+  .VA_container {
+    width: 90%;
+  }
+
+  .VA_MediaWrapper {
+    width: 100%;
+    padding: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .VA_container {
+    width: 100%;
+  }
+
+  .VA_MediaWrapper {
+    padding: 0;
+  }
+}

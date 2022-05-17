@@ -1,0 +1,480 @@
+.MC_main_container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  /* padding: 1em 0; */
+  flex-wrap: wrap;
+}
+
+.MC_container {
+  color: #fff;
+  width: 24%;
+  height: auto;
+  transition: .4s;
+  margin: 1em auto;
+  overflow: hidden;
+  border-radius: 1em;
+  position: relative;
+  text-align: center;
+  background: rgba(0, 0, 26, 1);
+  /* box-shadow: 0 .5em 1em rgba(0, 0, 0, 0.5); */
+}
+
+.MC_container:hover {
+  box-shadow: 0 .5em 1em rgba(0, 0, 0, 0.8);
+}
+
+.MC_header {
+  width: 100%;
+  height: 7.7em;
+  padding: 1em 2em;
+  max-height: 7.7em;
+}
+
+.MC_title_container {
+  width: 100%;
+  height: 100%;
+}
+
+.MC_title {
+  cursor: pointer;
+  transition: .4s;
+  font-size: 1.4em;
+  overflow: hidden;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  font-family: Helvetica, sans-serif;
+}
+
+.MC_title_container p {
+
+}
+
+.MC_title_container p:hover {
+  color: rgba(162, 155, 254, 1);
+}
+
+.MC_media {
+  width: 90%;
+  /* max-height: 20em; */
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  height: inherit;
+  /* position: relative; */
+}
+
+.MC_duration_container {
+  z-index: 1;
+  width: inherit;
+  position: relative;
+}
+
+.MC_duration {
+  padding: 0.5em;
+  font-weight: 500;
+  position: absolute;
+    top: 1em;
+    left: 0.5em;
+  border-radius: 0.5em;
+  background: rgba(44, 62, 80, 1);
+}
+
+.MC_image_container,
+.MC_image_container_av {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: .4s;
+  position: relative;
+}
+
+.MC_image_container:hover .MC_media_screen_container,
+.MC_image_container_av:hover .MC_media_screen_container {
+  opacity: 1;
+}
+
+.MC_image_container:hover .MC_play_container,
+.MC_image_container_av:hover .MC_play_container {
+  opacity: 1;
+}
+
+.MC_media_screen_container {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: .4s;
+  position: absolute;
+    top: 0;
+    left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.MC_play_container {
+  width: 10em;
+  height: 10em;
+  opacity: 0;
+  z-index: 1;
+  transition: .4s;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.MC_play_btn {
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  background: none;
+  border-radius: 50%;
+  color: rgba(162, 155, 254, 0.8);
+  border: solid 2px rgba(162, 155, 254, 0.8);
+}
+
+.MC_request_progress_container {
+  width: 100%;
+  height: 0.3em;
+  /* display: none; */
+  position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.MC_request_progress {
+  width: 0%;
+  height: 100%;
+  transition: .4s;
+  background: rgba(112, 111, 211,1.0);
+}
+
+.MC_audio,
+.MC_image,
+.MC_video,
+.MC_image_av {
+  width: 100%;
+  height: auto;
+  /* height: 15em; */
+  cursor: pointer;
+  transition: .8s;
+  /* position: absolute; */
+    /* left: 0; */
+    /* bottom: 0; */
+  border-radius: .5em;
+  object-fit: contain;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.MC_audio,
+.MC_video,
+.MC_image_av {
+  position: relative;
+    /* top: 2px; */
+}
+
+.MC_image {
+  height: auto;
+  /* position: absolute;
+    left: 0;
+    bottom: 99%; */
+}
+
+.MC_default_image {
+  /* height: 15.5em; */
+  /* position: absolute; */
+    /* right: 100%; */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.MC_buttons {
+  width: 90%;
+  padding: 1em;
+  display: flex;
+  margin: 1em auto;
+  max-height: 5.8em;
+  border-radius: 0.5em;
+  background: rgba(44, 44, 84, 1);
+  /* background: linear-gradient(rgba(12, 36, 97, 1), rgba(25, 42, 86, .7)); */
+}
+
+.MC_buttons div {
+  width: 3%;
+  flex: 0 1 22%;
+  margin: 0 1em;
+}
+
+.MC_buttons button {
+  transition: .4s;
+  background: none;
+  font-size: 1.6em;
+  color: rgba(162, 155, 254, 1);
+}
+
+.MC_information button {
+  width: 88%;
+  height: 3em;
+  padding: 1em;
+  font-size: 1.6em;
+  text-align: left;
+  margin: .3em auto;
+  border-radius: .3em;
+  background: rgba(108, 92, 231, .5);
+}
+
+.MC_date {
+  padding: 1em;
+  font-size: .9em;
+  text-align: left;
+  font-style: italic;
+  margin-bottom: 2em;
+  letter-spacing: 1px;
+}
+
+.MC_profile_link_container {
+  margin: 1em;
+  cursor: pointer;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+.MC_profile_link i {
+  margin-right: 1em;
+}
+
+.MC_profile_link {
+  color: #fff;
+  transition: .4s;
+  font-style: italic;
+}
+
+.MC_profile_link:hover {
+  color: rgba(162, 155, 254, 1);
+}
+
+.MC_profile_link_container .MC_profile_link span:hover {
+  color: rgba(162, 155, 254, 1);
+}
+
+.MC_caption_container {
+  z-index: 5;
+  width: 100%;
+  cursor: pointer;
+  transition: .2s;
+  position: absolute;
+    bottom: 0;
+  transform: translateY(20em);
+  /* display: none; */
+}
+
+.MC_caption {
+  color: #fff;
+  width: 100%;
+  height: 20em;
+  padding: 1em;
+  transition: .4s;
+  text-align: left;
+  border-radius: 1em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: rgba(140, 122, 230, 1);
+}
+
+.MC_caption div {
+  margin: .5em 0;
+  font-family: Helvetica, sans-serif;
+}
+
+.MC_caption i {
+  margin-right: .5em;
+}
+
+.MC_caption_title {
+  font-size: 1.3em;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.MC_caption_user_name h4 {
+  width: 90%;
+  max-width: 90%;
+  font-size: 1.1em;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.MC_caption_categories p {
+  font-size: 1.2em;
+  /* font-family: Helvetica, sans-serif; */
+}
+
+.MC_mature_container {
+  z-index: 1;
+  width: inherit;
+  font-size: 1.4em;
+  position: relative;
+}
+
+.MC_mature {
+  padding: 0.5em;
+  border-radius: 50%;
+  position: absolute;
+    top: 0.3em;
+    right: 0.5em;
+  color: rgba(248, 165, 194, 1);
+  background: rgba(44, 62, 80, 1);
+}
+
+.MC_divider_container,
+.MC_show_more_container {
+  width: 100%;
+  text-align: center;
+}
+
+.MC_show_more_container {
+  margin: 2em;
+}
+
+.MC_show_more_btn,
+.MC_show_more_btn_disabled {
+  color: #fff;
+  padding: 1em;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .4s;
+  font-size: 1.4em;
+  border-radius: 100em;
+  background: rgba(64, 64, 122, 1);
+}
+
+.MC_show_more_btn:hover {
+  background: rgba(112, 111, 211, 1);
+  /* box-shadow: 0 .2em 0.5em rgba(0, 0, 0, 0.5); */
+}
+
+.MC_show_more_btn_disabled {
+  background: rgba(178, 190, 195, 1);
+}
+.MC_show_more_btn_disabled:hover {
+  background: rgba(99, 110, 114, 1);
+}
+
+.MC_divider {
+  width: 50%;
+  /* padding: 1em; */
+  margin: auto;
+  /* box-shadow: 0 .1em .1em rgba(0, 0, 0, 0.5); */
+}
+
+.MC_no_content_container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.MC_no_content {
+  color: #fff;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+@media only screen and (max-width: 1100px) {
+  .MC_container {
+    width: 32%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .MC_container {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .MC_container {
+    width: 49%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .MC_container {
+    width: 50%;
+    margin: 1em 0;
+  }
+
+  .MC_show_more_btn {
+    /* width: 80%; */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MC_anchor_actions_container {
+    width: 100%;
+  }
+
+  .MC_buttons div button i {
+    font-size: 1.4em;
+  }
+
+  .MC_title {
+    font-size: 1.8em;
+    /* width: 90%; */
+  }
+
+  .MC_profile_link_container {
+    font-size: 1.3em;
+  }
+
+  .MC_caption_user_name h4 {
+    font-size: 1.4em;
+  }
+
+  .MC_caption_title {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .MC_container:last-child {
+    margin: auto;
+  }
+
+  .MC_show_more_btn {
+    /* border-radius: 0; */
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .MC_container {
+    width: 95%;
+    margin: 1em auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .MC_container {
+    width: 100%;
+    box-shadow: 0;
+    /* border-radius: 0; */
+  }
+
+  .MC_mature {
+    top: 0.2em;
+    font-size: 1.4em;
+  }
+
+  .MC_duration {
+    top: 0.2em;
+    font-size: 1.6em;
+  }
+}

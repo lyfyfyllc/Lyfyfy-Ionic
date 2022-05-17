@@ -1,0 +1,237 @@
+.OP_main_container {
+  width: 100%;
+  z-index: 512;
+  /* display: none; */
+  height: 100vh;
+  position: fixed;
+    top: 0;
+    left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.OP_container {
+  width: 30%;
+  margin: auto;
+  z-index: 510;
+  max-height: 100vh;
+  overflow-y: scroll;
+
+  scrollbar-width: thin;
+}
+
+.__OP_container__ {
+  width: 100%;
+  padding: 2em;
+  /* position: relative; */
+    /* top: 3em; */
+  transition: .4s;
+  overflow-y: auto;
+  /* border-radius: 5px; */
+  /* transform: translateY(-200vh); */
+  background: rgba(44, 44, 84,1.0);
+  /* border: solid 2px rgba(162, 155, 254, 1); */
+
+}
+
+.OP_container hr {
+  margin: 2em auto;
+  color: rgba(108, 92, 231, 1);
+}
+
+.__OP_container__ h3 {
+  text-align: center;
+  color: rgba(247, 241, 227, 1);
+}
+
+.OP_restriction_container {
+  width: 100%;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.OP_restriction_btn {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.4em;
+  border-radius: 5px;
+  font-weight: bolder;
+  text-transform: lowercase;
+  color: rgba(240, 147, 43, 1);
+  background: rgba(255, 190, 118, 1);
+  border: solid 3px rgba(240, 147, 43, 1);
+}
+
+.OP_restriction_btn:hover {
+  color: rgba(255, 190, 118, 1);
+  background: rgba(240, 147, 43, 1);
+}
+
+.OP_restriction_on {
+  color: rgba(51, 217, 178,1.0);
+  background: rgba(33, 140, 116,1.0);
+}
+
+.OP_select_container,
+.OP_account_container {
+  width: 100%;
+  /* display: flex; */
+  flex-wrap: wrap;
+  margin: 1em auto;
+}
+
+.OP_select_container div,
+.OP_account_container div {
+  width: 100%;
+  margin: 2em auto;
+}
+
+.OP_select_container div button,
+.OP_account_container div button {
+  width: 100%;
+  background: none;
+}
+
+.OP_account_container .OP_profile_container {
+  width: 100%;
+}
+
+.OP_select_container div button,
+.OP_account_container div button {
+  padding: 15px;
+  /* font-size: 2.5em; */
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: rgba(162, 155, 254, 1);
+  border: solid 3px rgba(162, 155, 254, 1);
+}
+
+.OP_signout_btn:hover,
+.OP_select_container div button:hover,
+.OP_account_container div button:hover {
+  color: #fff;
+  background: rgba(162, 155, 254, 1);
+}
+
+.OP_close_container button {
+  padding: 10px;
+  font-size: 1.4em;
+  font-weight: bolder;
+  text-transform: lowercase;
+  color: rgba(162, 155, 254, 1);
+}
+
+.OP_select_container div button {
+  text-align: center;
+}
+
+.OP_close_container button:hover {
+  color: rgba(112, 111, 211, 1);
+}
+
+.OP_restriction_btn i,
+.OP_close_container button i,
+.OP_select_container div button i,
+.OP_account_container div button i {
+  margin-right: 1em;
+}
+
+.OP_close_container {
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
+    top: 0;
+  text-align: center;
+  background: rgba(44, 44, 84,1.0);
+  border-bottom: solid 1px rgba(64, 64, 122, 1);
+}
+
+.OP_close_container button {
+  width: 100%;
+  padding: 15px;
+  font-size: 2em;
+  background: none;
+}
+
+.OP_signout_container {
+  width: 100%;
+}
+
+.OP_signout_btn {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: rgba(162, 155, 254, 1);
+  border: solid 3px rgba(162, 155, 254, 1);
+}
+
+.OP_search_main_container {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  position: sticky;
+    bottom: 0;
+  background: rgba(44, 44, 84,1.0);
+  border-top: solid 1px rgba(64, 64, 122, 1);
+}
+
+.OP_search_container {
+  width: 100%;
+  border-radius: 100em;
+  border: solid 3px rgba(162, 155, 254, 1);
+}
+
+.OP_search_input {
+  color: #fff;
+  width: 90%;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  font-size: 1.5em;
+}
+
+.OP_search_btn {
+  width: 10%;
+  background: none;
+  padding-left: 1.5em;
+  color: rgba(112, 111, 211, 1);
+}
+
+@media only screen and (max-width: 800px) {
+  .OP_container {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .OP_container {
+    top: 5em;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .OP_container {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .OP_container {
+    top: 0;
+  }
+
+  .OP_account_container div {
+    width: 100%;
+    display: block;
+  }
+
+  .OP_account_container div button {
+    width: 100%;
+  }
+}

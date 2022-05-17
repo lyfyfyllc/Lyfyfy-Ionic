@@ -1,0 +1,374 @@
+.hr {
+  width: 100%;
+  height: 1px;
+  margin: 1em auto;
+  color: rgba(162, 155, 254, 0.6);
+  background: rgba(162, 155, 254, 0.6);
+}
+
+.MP_media_info_container {
+  margin-top: 1em;
+}
+
+.MP_profile {
+  /* padding: 1em; */
+  /* width: 15%; */
+  display: flex;
+}
+
+.MP_profile_pic_container {
+  width: 4em;
+  height: 4em;
+  /* margin-right: 1em; */
+}
+
+.MP_profile div {
+  /* margin: 0 1em; */
+}
+
+.MP_profile_pic,
+.MP_default_profile_pic {
+  width: 4em;
+  height: 4em;
+  cursor: pointer;
+  transition: .4s;
+  border-radius: 50%;
+  object-fit: initial;
+}
+
+.MP_default_profile_pic {
+  color: #fff;
+  text-align: center;
+  background: rgba(108, 92, 231, 1);
+  font-family: Helvetica, sans-serif;
+}
+
+.MP_profile_pic:hover,
+.MP_default_profile_pic:hover {
+  opacity: 0.5;
+}
+
+.MP_default_profile_pic p {
+  font-size: 2.2em;
+  padding-top: 0.3em;
+  /* font-weight: lighter; */
+}
+
+.MP_profile_pic:hover {
+
+}
+
+.MP_media_title {
+  color: #fff;
+  font-size: 1.6em;
+  word-wrap: break-word;
+  padding: 0 0.5em 0.5em 0.5em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.MP_user_info {
+  color: #ddd;
+  font-weight: 500;
+  padding-left: 1em;
+  font-family: Helvetica, sans-serif;
+}
+
+.MP_username {
+  width: 100%;
+  max-width: 40vw;
+  cursor: pointer;
+  transition: .4s;
+  font-size: 1.6em;
+  overflow-x: hidden;
+  /* font-weight: lighter; */
+  text-overflow: ellipsis;
+  color: rgba(164, 176, 190, 1);
+}
+
+.MP_username:hover {
+  color: rgba(162, 155, 254, 1);
+}
+
+.MP_followers {
+  font-weight: bold;
+}
+
+.MP_video_info {
+  position: absolute;
+    right: 0;
+}
+
+.MP_video_info_box {
+  display: flex;
+}
+
+.MP_video_info p {
+  margin: 0 .5em;
+  font-size: 1.4em;
+  text-align: center;
+  color: rgba(164, 176, 190, 1);
+  font-family: Helvetica, sans-serif;
+}
+
+.MP_btns {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.MP_btns,
+.MP_btns_info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: .5em;
+}
+
+.MP_btns_info {
+  position: relative;
+  padding-left: 0.5em;
+}
+
+.MP_btns_info {
+}
+
+.MP_btns div {
+  margin: 1em auto;
+}
+
+.MP_download_container {
+  position: relative;
+    top: 1em;
+}
+
+.MP_download_btn {
+  transition: .4s;
+}
+
+.MP_edit_btn,
+.MP_like_btn,
+.MP_report_btn,
+.MP_caption_btn,
+.MP_dislike_btn,
+.MP_options_btn,
+.MP_download_btn,
+.MP_watch_later_btn,
+.MP_add_to_playlist_btn {
+  font-size: 2em;
+  background: none;
+  margin-top: 0.6em;
+  border-radius: 50%;
+  color: rgba(162, 155, 254, 1);
+}
+
+.MP_edit_btn:hover,
+.MP_like_btn:hover,
+.MP_report_btn:hover,
+.MP_caption_btn:hover,
+.MP_dislike_btn:hover,
+.MP_options_btn:hover,
+.MP_download_btn:hover,
+.MP_watch_later_btn:hover,
+.MP_add_to_playlist_btn:hover {
+  color: rgba(108, 92, 231, 0.5);
+}
+
+.MP_download_btn,
+.MP_like_container,
+.MP_dislike_container {
+  cursor: pointer;
+}
+
+.MP_like_container span,
+.MP_dislike_container span {
+  transition: .4s;
+  font-size: 1.6em;
+  padding: 0 0 0 1em;
+  font-weight: bolder;
+  color: rgba(162, 155, 254, 1);
+}
+
+.MP_options_container {
+  display: none;
+}
+
+.MP_description_header {
+  color: #fff;
+  margin: 2em;
+  /* padding: 0 2em; */
+  font-family: Helvetica, sans-serif;
+}
+
+.MP_description {
+  width: 98%;
+  color: #fff;
+  padding: 1em;
+  cursor: pointer;
+  transition: .4s;
+  max-height: 5em;
+  font-size: 1.6em;
+  font-weight: 500;
+  margin: 1em auto;
+  overflow: hidden;
+  /* border-radius: 0.5em; */
+  overflow-wrap: break-word;
+  font-family: Helvetica, sans-serif;
+  border-bottom: solid 4px rgba(162, 155, 254, 1);
+}
+
+.MP_description p {
+  padding-bottom: 3em;
+}
+
+.MP_description:hover {
+  /* background: rgba(162, 155, 254, 0.5); */
+  border-bottom: solid 4px rgba(162, 155, 254, 0.5);
+}
+
+.MP_support_buttons {
+  display: flex;
+  margin: 2em auto;
+  text-align: center;
+  position: relative;
+}
+
+.MP_support_buttons div {
+  width: auto;
+  /* margin: 0 1em; */
+}
+
+.MP_support_buttons button {
+  width: 100%;
+  font-size: 1.6em;
+  border-width: 2px;
+  padding: 0.7em 1em;
+  border-style: solid;
+  border-radius: 0.3em;
+  font-family: Helvetica, sans-serif;
+}
+
+.MP_support_btn {
+  background: none;
+  color: rgba(162, 155, 254, 1);
+  border-color: rgba(162, 155, 254, 1);
+}
+
+.MP_support_btn:hover {
+  color: #fff;
+  background: rgba(162, 155, 254, 1);
+}
+
+.MP_follow_container {
+  margin: auto 1em;
+}
+
+.MP_follow_btn {
+  background: none;
+  color: rgba(108, 92, 231, 1);
+  border-color: rgba(108, 92, 231, 1);
+}
+
+.MP_follow_btn:hover {
+  color: #fff;
+  background: rgba(108, 92, 231, 1);
+}
+
+.MP_following_btn {
+  color: #fff;
+  background: rgba(108, 92, 231, 1);
+  border-color: rgba(108, 92, 231, 1);
+}
+
+.MP_following_btn:hover {
+  background: none;
+  color: rgba(108, 92, 231, 1);
+}
+
+.MP_logo_container {
+  cursor: pointer;
+  transition: .4s;
+  background: #eee;
+  border-radius: 1em;
+  position: absolute;
+    right: 0;
+}
+
+.MP_logo_container img {
+  height: 45px;
+  padding: 5px;
+  cursor: pointer;
+  transition: .4s;
+  background: #eee;
+  object-fit: fill;
+  border-radius: 50%;
+  border: solid 2px #eee;
+}
+
+.MP_logo_container:hover {
+  opacity: 0.5;
+}
+
+.MP_rep_feedback_container {
+  display: none;
+}
+
+.MP_like_container button .MP_liked_btn,
+.MP_dislike_container button .MP_disliked_btn {
+  color: rgba(9, 132, 227, 1);
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+  .MP_support_buttons {
+    display: block;
+  }
+
+  .MP_support_buttons div {
+    width: 95%;
+    margin: 2em auto;
+  }
+
+  .MP_follow_btn {
+    margin: auto;
+  }
+
+  .MP_video_info h3 {
+    /* padding: 0; */
+  }
+
+  .MP_btns_info div {
+    margin: 0;
+  }
+
+  .MP_download_container,
+  .MP_report_container {
+    display: none;
+  }
+
+  .MP_logo_container {
+    width: 100%;
+    position: static;
+    border-radius: 0.5em;
+    border: solid 2px #eee;
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+  .MP_username {
+    max-width: 80vw;
+    text-overflow: ellipsis;
+  }
+
+  .MP_btns_info {
+    display: block;
+  }
+
+  .MP_video_info {
+    padding-top: 1em;
+    position: static;
+  }
+
+}

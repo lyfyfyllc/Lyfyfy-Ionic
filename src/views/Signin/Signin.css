@@ -1,0 +1,283 @@
+.LY_SI_main_container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  text-align: center;
+  background: linear-gradient(217deg, rgba(95, 39, 205, .8), rgba(108, 92, 231, 0) 70.71%),
+              linear-gradient(127deg, rgba(255, 159, 243, .8), rgba(108, 92, 231, 0) 70.71%),
+              linear-gradient(336deg, rgba(108, 92, 231, .8), rgba(95, 39, 205, 0.5) 70.71%);
+}
+
+.LY_SI_container {
+  width: 100%;
+  height: 100vh;
+}
+
+.LY_SI_body_container {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  padding: 2em;
+  background: #fff;
+  /* border-radius: 1em; */
+  box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom right, rgba(231, 127, 103, 0.3), rgba(255, 255, 255, 1) 20%);
+}
+
+.LY_SI_body {
+  height: 100%;
+  overflow-x: hidden;
+  /* position: relative; */
+}
+
+.LY_SI_header_container {
+  width: 100%;
+  position: relative;
+    top: 0;
+    left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.LY_SI_header_container h1 {
+  font-weight: 600;
+}
+
+.LY_SI_body_process {
+  margin: 2em auto;
+  overflow-x: hidden;
+  position: relative;
+  transform: translateY(50%);
+  /* animation-duration: 0.4s;
+  animation-name: SI_process;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease; */
+}
+
+.LY_SI_body_process input {
+  width: 50%;
+  color: #000;
+  border: none;
+  font-size: 2em;
+  background: none;
+  padding: 1em 2em;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  border-bottom: solid 2px rgba(108, 92, 231, .8);
+}
+
+.LY_review_input_container {
+  width: 100%;
+  text-align: center;
+}
+
+.LY_review_input_container h3 {
+  font-size: 2em;
+}
+
+.LY_SI_exit_container button {
+  margin: 1em;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-weight: bold;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.LY_SI_info {
+  margin-top: 1em;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.LY_SI_btns button {
+  color: #fff;
+  border: none;
+  padding: 1em;
+  margin: 0 5em;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.LY_SI_user_name_nxt_btn {
+
+}
+
+.LY_SI_info_card_container {
+  width: 50%;
+  margin: auto;
+  cursor: pointer;
+  transition: .4s;
+  background: #fff;
+  border-radius: 1em;
+  position: absolute;
+    top: 0;
+    left: 0;
+  text-align: center;
+  transform: translateY(-100em);
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+}
+
+.LY_SI_info_card {
+  width: 100%;
+  height: auto;
+  padding: 2em;
+}
+
+.LY_SI_info_card_header h2 {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.LY_SI_info_card_body p {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.LY_SI_btns button:hover {
+  background: rgba(108, 92, 231, 1);
+}
+
+.LY_SI_info_btn,
+.LY_SI_exit_container button {
+  transition: .4s;
+}
+
+.LY_SI_info_btn:hover,
+.LY_SI_exit_container button:hover {
+  color: rgba(108, 92, 231, 1);
+}
+
+.LY_page_log_container {
+  width: auto;
+  height: auto;
+  padding: 0 1em;
+  position: absolute;
+  border-radius: .5em;
+  bottom: 1em; left: 1em;
+  transition: .4s;
+  /* transform: translateY(20em); */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.LY_page_log {
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 1em auto;
+  text-transform: uppercase;
+  font-family: 'Varela Round', sans-serif;
+}
+
+@media only screen and (max-width: 1100px) {
+  .LY_SI_body_container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .LY_SI_body_container {
+    width: 80%;
+  }
+
+  .LY_SI_body_process input {
+    width: 75%;
+    font-size: 1.6em;
+  }
+
+  .LY_SI_btns button {
+    margin: 3em 1em;
+  }
+
+  .LY_SI_info_card_container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .LY_SI_body_container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .LY_SI_body_process input {
+    width: 95%;
+    font-size: 1.6em;
+    border-radius: 0.3em;
+    border: solid 2px rgba(112, 111, 211, 1);
+  }
+
+  .LY_SI_info_card_container {
+
+  }
+
+  .LY_page_log_container {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    background: rgba(50, 50, 50, 1);
+  }
+
+  .LY_SI_exit_container {
+    width: 100%;
+  }
+
+  .LY_SI_exit_container button {
+    font-size: 1.6em;
+    margin: 1em .5em;
+  }
+
+  .LY_review_input_container {
+    width: 100%;
+
+  }
+}
+
+.slide-enter-from {
+  transform: translateX(100%);
+}
+
+.slide-enter-to {
+  transform: translateX(0);
+}
+
+.slide-enter-active {
+  transition: 0.3s;
+}
+
+.slide-leave-from {
+  transform: translateX(0);
+}
+
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+
+.slide-leave-active {
+  transition: 0.3s;
+}
+
+.page_log-enter-from { transform: translateY(20em); }
+.page_log-enter-to { transform: translateY(0); }
+.page_log-enter-active { transition: .4s; }
+.page_log-leave-from { transform: translateY(0); }
+.page_log-leave-to { transform: translateY(20em); }
+.page_log-leave-active { transition: .4s; }
+
+@keyframes SI_process {
+  0% {
+    transform: translateX(55em);
+  }
+
+  80% {
+    transform: translateX(-3em);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,116 @@
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Varela Round', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: Helvetica, sans-serif;
+
+  scrollbar-width: thin;
+  scrollbar-color: #706fd3 #40407a;
+}
+
+body {
+  height: 100%;
+  background-attachment: fixed;
+  background: rgba(44, 44, 84, 1);
+}
+
+a {
+  color: #fff;
+  cursor: pointer;
+  transition: .4s;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: .4s;
+}
+
+button:active {
+  color: rgba(44, 44, 84, 1);
+}
+
+input {
+  border: none;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body.main::-webkit-scrollbar-track {
+  background: #40407a;
+}
+
+body.main::-webkit-scrollbar-thumb {
+  background-color: #706fd3;
+}
+
+.LyfyfyLogo {
+  width: 50%;
+  color: #fff;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  margin: 1em auto;
+  background: #b1b1b1;
+}
+
+.LY_loading_screen_container {
+  width: 100%;
+  z-index: 510;
+  height: 100vh;
+  position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.LY_loading_screen {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(44, 44, 84, 1);
+}
+
+.LY_screen_tips {
+  width: 50%;
+  margin: auto;
+  font-weight: 500;
+  position: relative;
+    top: 50%;
+  transform: translateY(-50%);
+  color: rgba(162, 155, 254, 1);
+  font-family: Helvetica, sans-serif;
+}
+
+.LY_main_container {
+  width: 100%;
+  height: 100%;
+}
+
+.LY_body_container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* background: rgba(44, 44, 84, 1); */
+}
+
+@media only and screen (max-width: 600px) {
+  html {
+    /* font-size: 16px; */
+  }
+}

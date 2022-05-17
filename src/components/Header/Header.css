@@ -1,0 +1,328 @@
+
+
+/*  */
+
+/*  */
+
+.HD_background_container {
+  height: 8em;
+  width: 100%;
+  transition: .4s;
+}
+
+.HD_main_container {
+  height: 8em;
+  width: 100%;
+  z-index: 508;
+  max-height: 8em;
+  position: sticky;
+    top: 0;
+  transition: .4s;
+  background: rgba(44, 44, 84, 1);
+  border-bottom: solid 1px rgba(64, 64, 122, 1);
+  /* box-shadow: 0 .5em 2em 0 rgba(0, 0, 0, 0.2); */
+}
+
+.HD_container {
+  width: 80%;
+  height: 8em;
+  margin: auto;
+  padding-top: 2em;
+  text-align: center;
+}
+
+.HD_nav_container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+    /* left: 50%; */
+  /* transform: translateX(-25%); */
+}
+
+.HD_nav {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+
+.HD_home_container,
+.HD_menu_container,
+.HD_options_container,
+.HD_session_container,
+.HD_main_search_container {
+
+}
+
+.HD_nav form {
+  height: 100%;
+}
+
+.HD_nav div {
+  margin: 0 1em;
+}
+
+.HD_nav div button {
+  font-size: 2em;
+  padding: 0.4em 0;
+}
+
+.HD_menu_btn,
+.HD_pages_btn,
+.HD_posts_btn,
+.HD_search_btn,
+.HD_upload_btn,
+.HD_videos_btn,
+.HD_profile_btn,
+.HD_sign-in_btn,
+.HD_sign-out_btn,
+.HD_rep_search_btn,
+.HD_restriction_btn,
+.HD_create_profile_btn {
+  color: #ccc;
+  transition: .4s;
+  background: none;
+  border-radius: 50%;
+}
+
+.HD_menu_btn:hover,
+.HD_pages_btn:hover,
+.HD_posts_btn:hover,
+.HD_search_btn:hover,
+.HD_upload_btn:hover,
+.HD_videos_btn:hover,
+.HD_profile_btn:hover,
+.HD_sign-in_btn:hover,
+.HD_sign-out_btn:hover,
+.HD_rep_search_btn:hover,
+.HD_create_profile_btn:hover {
+  color: rgba(162, 155, 254, 1);
+}
+
+.HD_profile_btn {
+  width: 2em;
+  text-transform: uppercase;
+  background: rgba(64, 64, 122,1.0);
+}
+
+.HD_profile_btn:hover {
+  /* background: rgba(44, 62, 80,1.0); */
+}
+
+.HD_home_nav {
+
+}
+
+.HD_rep_search_btn {
+  display: none;
+}
+
+.HD_nav .HD_options_container {
+  margin: 0;
+  position: absolute;
+    right: 0;
+}
+
+.HD_nav .HD_menu_btn,
+.HD_nav .HD_options_btn {
+  cursor: pointer;
+  transition: .4s;
+  font-size: 2.5em;
+  background: none;
+  padding: 0.2em 0 0 0;
+  color: rgba(247, 241, 227, 1);
+  /* color: rgba(162, 155, 254, 1); */
+  /* position: absolute; */
+    /* right: 0; */
+}
+
+.HD_nav .HD_menu_btn:hover,
+.HD_nav .HD_enter_btn:hover,
+.HD_nav .HD_options_btn:hover,
+.HD_homeSession_container button:hover {
+  color: rgba(170, 166, 157, 1);
+}
+
+.HD_nav .HD_menu_btn {
+  margin-left: 10px;
+}
+
+.HD_nav .HD_home_btn {
+  width: 100%;
+  font-size: 2.5em;
+  background: none;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: .5em;
+  padding: 0.1em 0 0 0;
+  color: rgba(162, 155, 254, 1);
+}
+
+.HD_logo {
+  height: 30px;
+  transition: .4s;
+  border-radius: 50%;
+  position: relative;
+    top: 2px;
+  /* background: rgba(162, 155, 254, 1); */
+  /* border: solid 2px rgba(162, 155, 254, 1); */
+}
+
+.HD_home_btn:hover .HD_logo {
+  /* background: rgba(247, 143, 179, 1); */
+  /* border-color: rgba(247, 143, 179, 1); */
+}
+
+.HD_nav .HD_home_container {
+  margin: 0;
+  /* min-width: 8.5em; */
+  /* margin-right: 1em; */
+}
+
+.HD_menu_container {
+
+}
+
+.HD_nav .HD_search_wrapper {
+  /* width: 65%; */
+  width: 60%;
+  z-index: 508;
+  /* margin: 0 auto; */
+  max-height: 4em;
+  border-radius: 0.5em;
+  background: rgba(19, 15, 64, 0.8);
+}
+
+.HD_nav .HD_main_search_container {
+  margin: 0;
+  display: flex;
+  max-height: 4em;
+}
+
+.HD_search_container {
+  width: 100%;
+  height: 4em;
+  position: relative;
+}
+
+.HD_search {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
+  background: none;
+  font-size: 1.6em;
+  font-weight: 500;
+}
+
+.HD_nav .HD_search_btn_container {
+
+}
+
+.HD_nav .HD_search_btn_container .HD_search_btn {
+  width: 4em;
+  padding: 0;
+  height: 2em;
+  border-radius: 0%;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: rgba(162, 155, 254, 1);
+  background: rgba(48, 51, 107, 1);
+}
+
+.HD_nav .HD_enter_btn,
+.HD_homeSession_container button {
+  background: none;
+  font-size: 2.5em;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 5px 0 0 0;
+  color: rgba(247, 241, 227, 1);
+}
+
+.HD_home_btn:hover {
+  opacity: 0.6;
+}
+
+.LY_body_container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+@media only screen and (max-width: 1240px) {
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+}
+
+@media only screen and (max-width: 850px) {
+  .HD_theme_container,
+  .HD_upload_container,
+  .HD_restriction_container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .HD_container {
+    width: 95%;
+  }
+
+  .HD_nav {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .HD_nav .HD_menu_container {
+    position: absolute;
+      right: 0;
+  }
+
+  .HD_enter_container,
+  .HD_options_container,
+  .HD_profile_container,
+  .HD_homeSession_container {
+    display: none;
+  }
+
+  .HD_search_wrapper {
+    display: none;
+  }
+
+  .HD_nav .HD_menu_btn,
+  .HD_nav .HD_menu_container,
+  .HD_nav .HD_home_container {
+    margin: 0;
+  }
+
+  .HD_nav {
+    margin: auto;
+  }
+
+  .HD_main_container {
+    height: 6em;
+    max-height: 6em;
+  }
+
+  .HD_container {
+    width: 95%;
+    height: 6em;
+    padding-top: 1em;
+  }
+
+  .HD_background_container {
+    /* height: 5em; */
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+
+}

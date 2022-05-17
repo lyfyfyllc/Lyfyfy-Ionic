@@ -1,18 +1,15 @@
 <template>
-  <ion-app>
-    <ion-router-outlet />
-  </ion-app>
+
+  <div class="LY_body_container">
+
+    <router-view />
+
+    <PageLog />
+
+  </div>
+
 </template>
 
-<script lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
-import { defineComponent } from 'vue';
+<script src="./App.js"></script>
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    IonApp,
-    IonRouterOutlet
-  }
-});
-</script>
+<style src="./App.css"></style>

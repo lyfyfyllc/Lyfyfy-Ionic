@@ -1,0 +1,458 @@
+
+/*  */
+.PC_main_container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.PC_container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.PC_content_container {
+  width: 32%;
+  color: #fff;
+  height: auto;
+  padding: 2em 0;
+  transition: .4s;
+  background: none;
+  margin: 1em auto;
+  max-height: 100%;
+  border-radius: 1em;
+  overflow-y: hidden;
+  position: relative;
+  background: rgba(19, 15, 64, 1);
+  border: solid 1px rgba(162, 155, 254, 1);
+  /* box-shadow: 0 1px .2em rgba(0, 0, 0, 0.5); */
+}
+
+.PC_content_container:hover {
+  border: solid 1px rgba(253, 121, 168, 1);
+  box-shadow: 0 1px 1em rgba(0, 0, 0, 0.5);
+}
+
+.PC_content {
+  width: 100%;
+  height: auto;
+  padding: 0 2em;
+  overflow-y: hidden;
+  /* position: relative; */
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.PC_profile_information {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.PC_header_container {
+  /* width: 100%; */
+  /* height: 6em; */
+  /* display: flex; */
+  position: relative;
+}
+
+.PC_header_container button {
+  background: none;
+  color: rgba(162, 155, 254, 1);
+}
+
+.PC_profile_picture_container {
+
+}
+
+.PC_mature_container,
+.PC_profile_picture_container img {
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  transition: .4s;
+  background: none;
+  border-radius: 50%;
+  /* position: absolute; */
+    /* top: 0; */
+  object-fit: initial;
+}
+
+.PC_mature_container {
+  /* z-index: 1; */
+  /* width: inherit; */
+  /* font-size: 1.4em; */
+  /* position: relative; */
+  text-align: center;
+  right: 0;
+}
+
+.PC_mature_container .PC_mature {
+  padding: 0.5em;
+  font-size: 2em;
+  border-radius: 50%;
+  /* position: absolute; */
+    /* top: 0.3em; */
+    /* right: 0.5em; */
+  color: rgba(248, 165, 194, 1);
+  background: rgba(44, 62, 80, 1);
+}
+
+.PC_default_profile_picture,
+.PC_profile_picture_container img {
+  left: 0;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.PC_default_profile_picture {
+  width: 4em;
+  height: 4em;
+  /* padding: 1em; */
+  font-size: 1em;
+  border-radius: 50%;
+  text-align: center;
+  background: rgba(104, 109, 224, 1);
+}
+
+.PC_default_profile_picture:hover {
+  background: rgba(104, 109, 224, 0.5);
+}
+
+.PC_default_profile_picture h1 {
+  position: relative;
+    top: 50%;
+  transform: translateY(-50%);
+}
+
+.PC_info_container {
+  margin: 0.5em 0 0 1em;
+}
+
+.PC_options_container {
+  /* padding-top: 1.6em; */
+  text-align: center;
+    right: 0;
+}
+
+.PC_options_btn {
+  font-size: 3em;
+}
+
+/* .PC_bookmark_container .PC_bookmark_btn,
+.PC_bookmark_container .PC_bookmark_btn_ab {
+  padding: 1em;
+  border-radius: 0.5em;
+  background: rgba(108, 92, 231, 1);
+}
+
+.PC_bookmark_container .PC_bookmark_btn:hover {
+  color: rgba(108, 92, 231, 1);
+  background: rgba(162, 155, 254, 1);
+} */
+
+.PC_profile_picture:hover {
+  transform: translateY(-.3em);
+  box-shadow: 0 .5em 1em rgba(0, 0, 0, 0.5);
+}
+
+.PC_username_container {
+  /* width: 70%; */
+  position: relative;
+    /* top: 1em; */
+    /* right: 6em; */
+}
+
+.PC_username {
+  cursor: pointer;
+  transition: .4s;
+  font-size: 1.2em;
+  max-height: 15px;
+  font-style: italic;
+  position: relative;
+  word-wrap: break-word;
+  color: rgba(247, 241, 227, 1);
+}
+
+.PC_date {
+  color: rgba(170, 166, 157, 1);
+}
+
+.PC_username:hover {
+  color: rgba(162, 155, 254, 1);
+}
+
+.PC_content div {
+  /* margin: .5em auto 0 auto; */
+}
+
+.PC_object {
+  width: 100%;
+  margin: auto;
+  height: 27em;
+  cursor: pointer;
+  max-height: 50em;
+}
+
+.PC_text {
+  font-size: 1.8em;
+  overflow: hidden;
+  margin-top: .2em;
+  display: -webkit-box;
+  /* font-weight: lighter; */
+  -webkit-line-clamp: 2;
+  /* word-break: break-all; */
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.PC_text_container .text_only {
+  -webkit-line-clamp: 11;
+}
+
+.PC_media_container {
+  width: 95%;
+  height: auto;
+  /* height: auto; */
+  margin: auto;
+  /* max-height: 15em; */
+  text-align: center;
+}
+
+.PC_media {
+  width: 100%;
+  height: 20em;
+  cursor: pointer;
+  background: #000;
+  margin: 1em auto;
+  max-height: 20em;
+  object-fit: contain;
+  border-radius: .5em;
+}
+
+.PC_buttons_container {
+  width: 90%;
+  padding: 1em;
+  display: flex;
+  margin: auto;
+  /* position: absolute; */
+    /* bottom: 0; */
+  /* transform: translateY(100%); */
+  border-radius: 0.5em;
+  background: rgba(64, 64, 122, 1);
+}
+
+.PC_buttons {
+  width: 100%;
+  margin: auto;
+}
+
+.PC_buttons_container div {
+  width: 25%;
+  /* height: 6em; */
+  margin: auto;
+  text-align: center;
+}
+
+.PC_buttons_container div button {
+  width: 100%;
+  /* height: 3em; */
+  font-size: 2em;
+  background: none;
+  /* background: #fff; */
+  /* border-radius: 50%; */
+  color: rgba(162, 155, 254, 1);
+}
+
+.PC_buttons_container div button:hover {
+  color: rgba(248, 165, 194, 1);
+}
+
+/* BOOKMARK BTN */
+.PC_buttons_container .PC_bookmark_btn_ab {
+  color: #fff;
+  background: rgba(0, 184, 148, 1);
+}
+/* BOOKMARK BTN */
+
+/* LIKE BTN */
+.PC_buttons_container .PC_like_btn_al {
+  color: #fff;
+  background: rgba(235, 77, 75, 1);
+}
+/* LIKE BTN */
+
+/* DISLIKE BTN */
+.PC_buttons_container .PC_dislike_btn_ad {
+  color: #fff;
+  background: rgba(9, 132, 227, 1);
+}
+/* DISLIKE BTN */
+
+/* REPORT BTN */
+.PC_buttons_container .PC_report_btn_ar {
+  color: #fff;
+  background: rgba(225, 112, 85, 1);
+}
+/* REPORT BTN */
+
+.PC_follow_container {
+  width: 100%;
+  height: 5em;
+  text-align: center;
+}
+
+.PC_follow_btn {
+  width: 90%;
+  color: #fff;
+  height: 3em;
+  background: none;
+  font-style: italic;
+  border-radius: 10em;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  color: rgba(104, 109, 224,1.0);
+  border: solid 1px rgba(104, 109, 224,1.0);
+  /* border: solid 1px rgba(255, 0, 0, 0.5); */
+}
+
+.PC_divider_container,
+.PC_show_more_container {
+  width: 100%;
+  text-align: center;
+}
+
+.PC_show_more_container {
+  margin: 2em;
+}
+
+.PC_show_more_btn {
+  color: #fff;
+  padding: 1em;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .4s;
+  font-size: 1.4em;
+  border-radius: 100em;
+  background: rgba(64, 64, 122, 1);
+}
+
+.PC_show_more_btn:hover {
+  background: rgba(112, 111, 211, 1);
+  /* box-shadow: 0 .2em 0.5em rgba(0, 0, 0, 0.5); */
+}
+
+.PC_divider {
+  width: 50%;
+  /* padding: 1em; */
+  margin: 0 auto 2em auto;
+  box-shadow: 0 .1em .1em rgba(0, 0, 0, 0.5);
+}
+
+.PC_no_content_container {
+  width: 100%;
+  margin: 4em auto;
+  text-align: center;
+}
+
+.PC_no_content {
+  color: #fff;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+@media only screen and (max-width: 2600px) {
+  /* .PC_profile_information .PC_profile_picture {
+    width: 5%;
+  }
+
+  .PC_buttons_container div button {
+    width: 20%;
+  } */
+}
+
+@media only screen and (max-width: 1150px) {
+  .PC_content_container {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .PC_text {
+    /* text-align: center; */
+  }
+
+  .PC_media_container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .PC_show_more_btn {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .PC_main_container {
+    display: block;
+  }
+
+  .PC_content_container {
+    width: 100%;
+  }
+
+  .PC_content_container:last-child {
+    margin: auto;
+  }
+
+  .PC_buttons_container div button {
+    /* width: 50%; */
+  }
+
+  .PC_show_more_btn {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .PC_container {
+    /* width: 85%; */
+  }
+
+  .PC_buttons_container div button {
+    /* width: 55%; */
+  }
+
+  .PC_buttons_container {
+    /* width: 100%; */
+  }
+
+  .PC_show_more_btn {
+    /* border-radius: 0; */
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .PC_container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .PC_content_container {
+    border: none;
+    margin: 2em auto;
+    /* border-radius: 0; */
+    border-bottom: solid 1px rgba(162, 155, 254, 1);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .PC_buttons_container div button {
+    /* width: 75%; */
+  }
+}
