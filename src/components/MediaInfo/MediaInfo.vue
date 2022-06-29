@@ -10,7 +10,7 @@
       <div class="MP_btns_info">
         <div :id="info._video_.video_user_id" class="MP_profile">
           <div class="MP_profile_pic_container">
-            <div @click="$router.push(`/profile/${ info._video_.video_user_id }/videos`)" v-if="!info._video_.user_profile_img" class="MP_default_profile_pic"><p>{{ info._video_.__USERNAME__[0].toUpperCase() }}</p></div>
+            <button @click="$router.push(`/profile/${ info._video_.video_user_id }/videos`)" v-if="!info._video_.user_profile_img" class="MP_default_profile_pic">{{ info._video_.__USERNAME__[0].toUpperCase() }}</button>
             <img @click="$router.push(`/profile/${ info._video_.video_user_id }/videos`)" v-else class="MP_profile_pic" :src="info._video_.user_profile_img">
           </div>
           <div class="MP_user_info">

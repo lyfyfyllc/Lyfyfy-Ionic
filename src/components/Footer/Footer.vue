@@ -25,12 +25,10 @@
             <button data-action="" class="FT_options_tab_btn FT_tab_btn"><i class="fas fa-ellipsis-v"></i></button>
             <!-- <h3>menu</h3> -->
           </div>
-          <div class="FT_account_tab_container">
+          <!-- <div class="FT_account_tab_container">
             <button v-if="$store.state.isActiveUserLoggedIn" @click="$router.push(`/profile/${ $store.state.clientSideID }/videos`)" class="FT_account_btn FT_tab_btn"><i class="fas fa-user-circle"></i></button>
             <button v-else @click="nav('/signin')" class="FT_account_btn FT_tab_btn"><i class="fas fa-sign-in-alt"></i></button>
-            <!-- <h3 v-if="$store.state.isActiveUserLoggedIn">You</h3> -->
-            <!-- <h3 v-else>signin</h3> -->
-          </div>
+          </div> -->
         </div>
       </div>
 

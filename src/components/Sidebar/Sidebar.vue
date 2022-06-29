@@ -160,7 +160,7 @@
                 <div class="SB_link_container">
                   <div class="SB_link">
                     <div class="SB_studio_container">
-                      <button data-action_attribute="/studio" class="SB_studio_btn SB_btn" name="button"><i class="fas fa-cloud"></i>Studio</button>
+                      <button @click="$router.push('/studio')" class="SB_studio_btn SB_btn" name="button"><i class="fas fa-cloud"></i>Studio</button>
                     </div>
                     <div class="SB_hall_of_fame_container">
                       <button class="SB_hall_of_fame_btn" title="Hall Of Fame"><i class="fas fa-crown"></i>HOF</button>

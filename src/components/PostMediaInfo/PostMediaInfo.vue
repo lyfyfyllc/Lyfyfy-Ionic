@@ -6,7 +6,7 @@
         <div class="" style="display: flex;">
           <div class="MP_profile">
             <div class="MP_profile_pic_container">
-              <div v-if="!post.user_profile_img" @click="$router.push(`/profile/${ post.post_user_id }/posts`)" class="MP_default_profile_pic"><p>{{ post.username[0].toUpperCase() }}</p></div>
+              <button v-if="!post.user_profile_img" @click="$router.push(`/profile/${ post.post_user_id }/posts`)" class="MP_default_profile_pic">{{ post.username[0].toUpperCase() }}</button>
               <img v-else class="MP_profile_pic" :src="getObjectKey(post.user_profile_img)">
             </div>
           </div>

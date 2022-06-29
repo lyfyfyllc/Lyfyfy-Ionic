@@ -56,7 +56,7 @@
     				<button @click="$store.state.showOptions = !$store.state.showOptions, $router.push('/posts')" data-href="/posts" class="OP_posts_btn OP_link_btn"><i class="fas fa-sticky-note"></i> Posts</button>
     			</div>
     			<div class="OP_studio_container">
-    				<button data-href="/studio" class="OP_studio_btn OP_link_btn"><i class="fas fa-cloud"></i> Studio</button>
+    				<button @click="$store.state.showOptions = !$store.state.showOptions, $router.push('/studio')" class="OP_studio_btn OP_link_btn"><i class="fas fa-cloud"></i> Studio</button>
     			</div>
     			<div class="OP_history_container">
             <button v-if="$store.state.isActiveUserLoggedIn" data-href="/user/<?php echo $session_xp->get_client_side_id(); ?>/feed/history" class="OP_history_btn OP_link_btn"><i class="fas fa-history"></i> History</button>

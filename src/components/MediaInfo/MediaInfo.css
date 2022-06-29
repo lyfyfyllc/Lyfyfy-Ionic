@@ -28,8 +28,8 @@
 
 .MP_profile_pic,
 .MP_default_profile_pic {
-  width: 4em;
-  height: 4em;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: .4s;
   border-radius: 50%;
@@ -38,6 +38,7 @@
 
 .MP_default_profile_pic {
   color: #fff;
+  font-size: 2.2em;
   text-align: center;
   background: rgba(108, 92, 231, 1);
   font-family: Helvetica, sans-serif;
@@ -46,12 +47,6 @@
 .MP_profile_pic:hover,
 .MP_default_profile_pic:hover {
   opacity: 0.5;
-}
-
-.MP_default_profile_pic p {
-  font-size: 2.2em;
-  padding-top: 0.3em;
-  /* font-weight: lighter; */
 }
 
 .MP_profile_pic:hover {
