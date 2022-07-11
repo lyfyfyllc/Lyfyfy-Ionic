@@ -11,15 +11,15 @@
       </div>
 
       <div class="ST_post_textarea_container">
-        <div class="ST_post_textarea" placeholder="Hey!!!" spellcheck="false" contenteditable="true" ref="ST_post_textarea" v-html="studioTracker.post.postText"></div>
+        <div :style="'background: ' + themeColor_2" class="ST_post_textarea" placeholder="Hey!!!" spellcheck="false" contenteditable="true" ref="ST_post_textarea" v-html="studioTracker.post.postText"></div>
       </div>
 
       <div class="ST_post_text_action_container ST_action_container">
         <div class="ST_post_text_finish_container">
-          <button @click="addPostText($refs.ST_post_textarea.innerHTML, true)" class="ST_post_text_finish_btn ST_action_btn"><i class="fas fa-long-arrow-alt-right"></i> Add Comment</button>
+          <button :disabled="!textContent" @click="addPostText($refs.ST_post_textarea.innerText, true, $refs.ST_post_textarea.innerHTML)" class="ST_post_text_finish_btn ST_action_btn"><i class="fas fa-long-arrow-alt-right"></i> Add Comment</button>
         </div>
         <div class="ST_post_no_text_container">
-          <button @click="addPostText($refs.ST_post_textarea.innerHTML, false)" class="ST_post_no_text ST_action_btn"><i class="fas fa-comment-slash"></i> No Comment</button>
+          <button @click="addPostText($refs.ST_post_textarea.innerText, false, $refs.ST_post_textarea.innerHTML)" class="ST_post_no_text ST_action_btn"><i class="fas fa-comment-slash"></i> No Comment</button>
         </div>
       </div>
 
@@ -52,7 +52,7 @@
     text-align: left;
     border-radius: 8px;
     word-wrap: break-word;
-    background: rgba(48, 51, 107, 1);
+    background: rgba(48, 51, 107, 0.7);
     font-family: 'Varela Round', sans-serif;
     border-bottom: solid 3px rgba(71, 71, 135, 1);
   }
@@ -76,7 +76,7 @@
     }
 
     .ST_post_textarea {
-      border-radius: 0;
+      border-radius: 5px;
     }
 
     .ST_post_text_action_container {
@@ -88,13 +88,17 @@
 <script>
   export default {
     props: [
-      'studioTracker',
+      'studioData',
       'addPostText',
+      'themeColor_1',
+      'themeColor_2',
+      'studioTracker',
     ],
     data() {
       return {
         charLimit: 1000,
         currCharCount: 0,
+        textContent: false
       }
     },
     methods: {
@@ -102,16 +106,25 @@
     },
     mounted() {
       this.$refs.ST_post_textarea.focus()
+      let selection = window.getSelection()
+      selection.collapseToEnd()
 
       this.$refs.ST_post_textarea.addEventListener('keydown', (e) => {
         if (e.keyCode == 9) {
           e.preventDefault()
           document.execCommand('insertHTML', '', '&emsp;')
+        } else if (e.keyCode == 13) {
+          e.preventDefault()
+          document.execCommand('insertLineBreak')
         }
       })
 
+      this.currCharCount = this.$refs.ST_post_textarea.innerText.length
+
       this.$refs.ST_post_textarea.addEventListener('input', (e) => {
         this.currCharCount = e.target.innerText.length
+        if (e.target.textContent.trim().length >= 3) this.textContent = true
+        else this.textContent = false
       })
     }
   }

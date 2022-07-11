@@ -19,8 +19,9 @@ html {
 
 body {
   height: 100%;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background: rgba(44, 44, 84, 1);
+  background: linear-gradient(to bottom right, rgba(44, 44, 84, 1), rgba(64, 64, 122, 1)), no-repeat;
 }
 
 a {

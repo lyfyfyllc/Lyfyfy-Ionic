@@ -5,11 +5,11 @@
 
       <div class="FT_tabs_main_container">
         <div class="FT_tabs_container">
-          <div v-if="checkPosts()" @click="$router.push('/videos')" class="FT_videos_tab_container">
+          <div  @click="$router.push('/videos')" class="FT_videos_tab_container">
             <button class="FT_videos_tab_btn FT_tab_btn"><i class="fas fa-video"></i></button>
             <!-- <h3>videos</h3> -->
           </div>
-          <div v-if="checkVideos()" @click="$router.push('/posts')" class="FT_posts_tab_container">
+          <div @click="$router.push('/posts')" class="FT_posts_tab_container">
             <button class="FT_posts_tab_btn FT_tab_btn"><i class="fas fa-clipboard"></i></button>
             <!-- <h3>posts</h3> -->
           </div>

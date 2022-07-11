@@ -42,6 +42,18 @@
   background: rgba(232, 67, 147, 1);
 }
 
+.WP_MedaiPlayler_loading_container {
+  width: 100%;
+  padding: 20em 0;
+  border-radius: 1em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.WP_MedaiPlayler_loader {
+  color: #fff;
+}
+
 .WP_related_content_container {
   width: 75%;
   height: auto;
@@ -97,8 +109,7 @@
 .WP_ad_banner_container {
   color: #ccc;
   width: 100%;
-  cursor: pointer;
-  padding: 10em 0;
+  padding: 2em 0;
   cursor: pointer;
   transition: .4s;
   margin: 2em auto;
@@ -106,7 +117,7 @@
   text-align: center;
   border-radius: 0.5em;
   background: rgba(48, 51, 107, 1);
-  border: solid 4px rgba(112, 111, 211, 1);
+  border: solid 1px rgba(112, 111, 211, 1);
 }
 
 .WP_ad_banner_container:hover {
@@ -185,16 +196,71 @@
   padding: 1em 0;
   font-weight: bold;
   text-align: center;
-  background: rgba(44, 44, 84,1.0);
+  background: rgba(44, 44, 84, 1);
 }
 
 .WP_content_tab button:hover {
   opacity: 0.6;
-  /* background: rgba(44, 44, 84, 0.6); */
+}
+
+.WP_content_main_container {
+  width: 100%;
+  z-index: 520;
+  position: fixed;
+    bottom: 0;
+  transition: .4s;
+  overflow-y: auto;
+  min-height: 70vh;
+  max-height: 70vh;
+  transform: translateY(100vh);
+
+  scrollbar-width: none;
+}
+
+.WP_content_container {
+  width: 60%;
+  margin: auto;
+  min-height: 70vh;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  background: rgba(64, 64, 122, 1);
+}
+
+.WP_close_content_container {
+  width: 100%;
+  z-index: 520;
+  position: sticky;
+    top: 0;
+  border-bottom: solid 1px rgba(112, 111, 211, 1);
+}
+
+.WP_close_content_btn {
+  color: #fff;
+  width: 100%;
+  padding: 1.5em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  background: rgba(64, 64, 122, 1);
+}
+
+.WP_content_playlist_tab_container {
+  width: 100%;
+  margin: auto;
+}
+
+.WP_content_playlist_tab {
+  width: 100%;
+  color: #fff;
+  margin: auto;
+  padding: 1.6em 0;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  background: rgba(44, 44, 84, 1);
 }
 
 .WP_content_description_tab_container {
-  border-left: solid 2px rgba(112, 111, 211, 1);
+  /* border-left: solid 2px rgba(112, 111, 211, 1); */
 }
 
 .WP_content_tab .WP_content_tab_selected {
@@ -212,24 +278,32 @@
 
 .WP_content_related_tab_container {
   /* display: none; */
-  border-right: solid 2px rgba(112, 111, 211, 1);
+  /* border-right: solid 2px rgba(112, 111, 211, 1); */
 }
 
 .WP_playlist_main_container {
   width: 100%;
+  z-index: 522;
+  transition: .4s;
+  position: fixed;
+    bottom: 0;
 }
 
 .WP_playlist_container {
-  width: 100%;
+  width: 60%;
+  min-height: 70vh;
+  max-height: 70vh;
+  background: rgba(48, 51, 107, 1);
 }
 
 .WP_playlist_header_container {
   padding: 2em;
   display: flex;
+  cursor: pointer;
   position: relative;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
-  background: rgba(104, 109, 224,0.5);
+  background: rgba(104, 109, 224, 1);
 }
 
 .WP_playlist_name {
@@ -239,7 +313,7 @@
 
 .WP_playlist_buttons_container {
   position: absolute;
-  right: 1em;
+    right: 1em;
 }
 
 .WP_playlist_buttons_container button {
@@ -254,8 +328,8 @@
 }
 
 .WP_now_playing_container {
-  background: rgba(48, 51, 107, 0.8);
-  border-bottom: solid 1px rgba(255, 204, 204, 0.3);
+  background: rgba(48, 51, 107, 1);
+  border-bottom: solid 2px rgba(255, 204, 204, 0.3);
 }
 
 .WP_now_playing {
@@ -268,9 +342,7 @@
 
 .WP_playlist_body_container {
   padding: 2em;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  background: rgba(48, 51, 107,1.0);
+  background: rgba(48, 51, 107, 1);
 }
 
 @media only screen and (max-width: 600px) {
@@ -281,6 +353,14 @@
 
   .WP_playlist_body_container {
     padding: 2em 0;
+  }
+
+  .WP_playlist_container {
+    width: 100%;
+  }
+
+  .WP_content_playlist_tab_container {
+    width: 95%;
   }
 }
 
@@ -358,6 +438,18 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .WP_content_main_container {
+    width: 100%;
+  }
+
+  .WP_content_container {
+    width: 100%;
+  }
+
+  .WP_content_tab button:hover {
+    opacity: 1;
+  }
+
   .WP_page_container {
     width: 100%;
   }
@@ -384,6 +476,12 @@
 
   .WP_queue_main_container {
     border-radius: 0;
+  }
+
+  .WP_MediaPlayer {
+    z-index: 518;
+    position: sticky;
+      top: 0;
   }
 }
 
@@ -413,12 +511,6 @@
 
   .WP_main_page_container {
     /* top: 60vh; */
-  }
-
-  .WP_MediaPlayer {
-    z-index: 508;
-    position: sticky;
-      top: 0;
   }
 
   .WP_ad_banner_container {

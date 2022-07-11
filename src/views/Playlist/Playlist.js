@@ -1,6 +1,8 @@
+import Reply from '@/components/Reply/Reply.vue'
+import Footer from '@/components/Footer/Footer.vue'
 import Options from '@/components/Options/Options.vue'
 import HeaderComp from '@/components/Header/Header.vue'
-import Comment from '@/components/Comments/Comments.vue'
+import Comments from '@/components/Comments/Comments.vue'
 import FeedCard from '@/components/FeedCard/FeedCard.vue'
 import SidebarComp from '@/components/Sidebar/Sidebar.vue'
 import MediaInfo from '@/components/MediaInfo/MediaInfo.vue'
@@ -12,8 +14,10 @@ import FetchGet from '@/Functions/FetchGet.js'
 export default {
   name: 'Playlist',
   components: {
+    Reply,
+    Footer,
     Options,
-    Comment,
+    Comments,
     FeedCard,
     MediaInfo,
     HeaderComp,
@@ -25,12 +29,14 @@ export default {
   data() {
     return {
       playlist: '',
+      nextVideo: 0,
       commentCount: 0,
       currentVideo: 0,
       isLoading: false,
       videoData: false,
       commentsData: '',
       videoComponent: '',
+      showPlaylist: true,
       tabStickyPosition: 0,
       fetchGet: new FetchGet(
         this.$store.state.MainServer,
@@ -43,8 +49,8 @@ export default {
       if (typeof to !== "string") return
       window.scrollTo(0, 0)
       this.isLoading = true
-      if (this.playlist.length === 1) return this.currentVideo = 1
-      else if (this.currentVideo + 1 === this.playlist.length) return this.currentVideo = -1
+      if (this.playlist.length === 1) this.nextVideo = 1
+      // else if (this.currentVideo === this.playlist.length - 1) this.nextVideo = 0
       else this.changePlaylistRoute(to)
     }
   },
@@ -55,10 +61,14 @@ export default {
           this.currentVideo = x
         }
       })
+
+      this.nextVideo = this.currentVideo + 1
+      if (this.nextVideo === this.playlist.length) this.nextVideo = 0
     },
     changePlaylistRoute(id = false) {
-      if (this.currentVideo + 1 === this.playlist.length) this.currentVideo = -1
-      this.$router.push(`/playlist?list=${ this.$route.query.list }&v=${ id || this.playlist[this.currentVideo + 1].playlist_video_id }`)
+      // if (this.currentVideo + 1 === this.playlist.length) this.currentVideo = 0
+      this.findVideoIndex()
+      this.$router.push(`/playlist?list=${ this.$route.query.list }&v=${ id || this.playlist[this.nextVideo].playlist_video_id }`)
       .then(() => {
         this.fetchVideoPageData(id)
         this.videoComponent = false
@@ -71,6 +81,7 @@ export default {
         this.isLoading = false
         this.playlist = data.playlist
         this.findVideoIndex()
+        // console.log(this.currentVideo);
       })
     },
     get_object_key(data) {

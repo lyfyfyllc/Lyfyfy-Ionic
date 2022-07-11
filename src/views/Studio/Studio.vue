@@ -10,7 +10,7 @@
         <div class="ST_header_container">
 
           <div class="ST_home_container">
-            <button @click="changeSession('')" class="ST_home_btn"><i class="fas fa-cloud"></i> LYFYFY STUDIO</button>
+            <button @click="changeBackgroundColor()" class="ST_home_btn"><i class="fas fa-cloud"></i> LYFYFY STUDIO</button>
           </div>
 
         </div>
@@ -20,24 +20,34 @@
         <div class="ST_body_container"
         :style="studioSession === 'categories' || studioSession === 'postReview' ? 'top: 0; transform: none;' : 'top: 50%; transform: translateY(-50%);'">
 
-          <StudioStart v-if="!studioSession" :changeSession="changeSession" />
+          <StudioStart v-if="!studioSession || studioSession === 'start'" :changeSession="changeSession" />
 
-          <StudioType v-else-if="studioSession === 'type'" :addType="addType" :changeSession="changeSession" />
+          <StudioType v-else-if="studioSession === 'type'" :addType="addType"
+          :changeSession="changeSession" :studioTracker="studioTracker" />
 
+          <!-- USE INNERHTML UPON REVISIT -->
           <StudioPostText v-else-if="studioSession === 'postText'"
           :addPostText="addPostText" :changeSession="changeSession"
-          :displayPageLog="displayPageLog" :studioTracker="studioTracker" />
+          :displayPageLog="displayPageLog" :studioTracker="studioTracker"
+          :themeColor_1="themeColor_1" :themeColor_2="themeColor_2"
+          :studioData="studioData" />
 
           <StudioPostMedia v-else-if="studioSession === 'postMedia'"
           :changeSession="changeSession" :studioTracker="studioTracker"
           :displayPageLog="displayPageLog" :addPostMedia="addPostMedia"
-          :studioData="studioData" />
+          :studioData="studioData" :studioSession="studioSession"
+          :themeColor_1="themeColor_1" :themeColor_2="themeColor_2"
+          :toggleLoader="toggleLoader" />
 
           <StudioCategories v-else-if="studioSession === 'categories'"
-          :addCategories="addCategories" :displayPageLog="displayPageLog" />
+          :addCategories="addCategories" :displayPageLog="displayPageLog"
+          :studioTracker="studioTracker" :getColor="getColor"
+          :themeColor_1="themeColor_1" :themeColor_2="themeColor_2" />
 
           <StudioPostReview v-else-if="studioSession === 'postReview'"
-          :studioData="studioData" :studioTracker="studioTracker" />
+          :studioData="studioData" :studioTracker="studioTracker"
+          :studioSession="studioSession" :displayPageLog="displayPageLog"
+          :uploadPost="uploadPost" />
 
         </div>
       </div>
@@ -45,11 +55,14 @@
     </div>
   </div>
 
-  <StudioFooter :studioRestart="studioRestart" :toggleStudioSidebar="toggleStudioSidebar"
-  :navForward="navForward" :navBack="navBack" :studioSession="studioSession"
-  :studioTracker="studioTracker" />
+  <StudioLoader v-if="showLoader" />
 
-  <StudioPageLog :showPageLog="showPageLog" :pageLogMessage="pageLogMessage" />
+  <StudioFooter :studioRestart="studioRestart" :toggleStudioSidebar="toggleStudioSidebar"
+  :changeSession="changeSession" :studioSession="studioSession" :videoSessions="videoSessions"
+  :studioTracker="studioTracker" :postSessions="postSessions" />
+
+  <StudioPageLog :showPageLog="showPageLog" :pageLogMessage="pageLogMessage"
+  :closePageLog="closePageLog" />
 
 </template>
 

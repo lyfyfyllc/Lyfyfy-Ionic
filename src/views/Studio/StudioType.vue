@@ -1,4 +1,5 @@
 <template>
+
   <div class="ST_type_main_container">
     <div class="ST_type_container">
       <div class="ST_type_header_container ST_headers_container">
@@ -6,10 +7,12 @@
       </div>
       <div class="ST_type_action_container ST_action_container">
         <div class="ST_type_post_container">
-          <button @click="addType('post')" class="ST_type_post_btn ST_action_btn"><i class="fas fa-clipboard"></i> Post</button>
+          <button :style="studioTracker.type === 'post' ? 'border: solid 2px rgba(162, 155, 254, 1)' : 'border: none'"
+          @click="addType('post')" class="ST_type_post_btn ST_action_btn"><i class="fas fa-clipboard"></i> Post</button>
         </div>
         <div class="ST_type_video_container">
-          <button @click="addType('video')" class="ST_type_video_btn ST_action_btn"><i class="fas fa-video"></i> Video</button>
+          <button :style="studioTracker.type === 'video' ? 'border: solid 2px rgba(162, 155, 254, 1)' : 'border: none'"
+          @click="addType('video')" class="ST_type_video_btn ST_action_btn"><i class="fas fa-video"></i> Video</button>
         </div>
       </div>
     </div>
@@ -26,6 +29,7 @@
   export default {
     props: [
       'addType',
+      'studioTracker',
       'changeSession',
     ],
     components: {

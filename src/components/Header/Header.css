@@ -13,13 +13,13 @@
 .HD_main_container {
   height: 8em;
   width: 100%;
-  z-index: 508;
+  z-index: 512;
   max-height: 8em;
   position: sticky;
     top: 0;
   transition: .4s;
-  background: rgba(44, 44, 84, 1);
-  border-bottom: solid 1px rgba(64, 64, 122, 1);
+  background: linear-gradient(to right, rgba(44, 44, 84, 1), rgba(64, 64, 122, 1));
+  /* border-bottom: solid 1px rgba(64, 64, 122, 1); */
   /* box-shadow: 0 .5em 2em 0 rgba(0, 0, 0, 0.2); */
 }
 

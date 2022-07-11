@@ -34,14 +34,18 @@
                 <MediaInfo v-if="videoData" :info="videoData" />
               </div>
 
+              <div class="WP_content_playlist_tab_container">
+                <button @click="showPlaylist = true" class="WP_content_playlist_tab"><i class="fas fa-list-ul"></i> <span>Playlist</span></button>
+              </div>
+
               <!--  -->
               <div class="WP_NR_content_container">
                 <div class="other_content_container">
 
-                  <div class="WP_playlist_main_container">
+                  <div :style="!showPlaylist ? 'transform: translateY(100vh)' : ''" class="WP_playlist_main_container">
                   <div class="WP_playlist_container">
 
-                    <div class="WP_playlist_header_container">
+                    <div @click="showPlaylist = false" class="WP_playlist_header_container">
                       <div class="WP_playlist_name_container">
                         <p v-if="videoData.playlist_name" class="WP_playlist_name">{{ videoData.playlist_name.playlist_name }}</p>
                         <!-- <p class="WP_playlist_name">My Playlist Name</p> -->
@@ -71,9 +75,11 @@
 
               <div class="WP_ad_banner_main_container">
                 <div class="WP_ad_banner_container">
-                  <h1>Want Your AD Here!! Click Me!</h1>
+                  <h1>Want Your AD Here!!</h1>
+                  <h1>Click Me!</h1>
                 </div>
               </div>
+
               <div class="WP_content_aside_main_container">
                 <div class="WP_content_aside_container">
 
@@ -93,45 +99,52 @@
                     </div>
                   </div>
 
-                  <div class="WP_content_main_container">
-                    <div class="WP_content_container">
-
-                      <!-- REQUIRE IN CONTENT -->
-                      <MediaDescription v-if="videoData._video_ && videoComponent === 'description'" :description="videoData" :toggleDescription="toggleDescription" />
-
-                      <div v-if="videoData._video_ && videoComponent === 'comments'" class="CM_main_comments_container">
-                        <div class="CM_comments_header_container">
-                          <div class="CM_comments_header">
-                            <div class="CM_info_container">
-                              <h2 class="CM_comment_count">{{ commentCount.comments }} <i class="fas fa-comments"></i> Comments</h2>
-                            </div>
-                            <div class="CM_reply_btn_container">
-                              <button class="CM_reply_btn" name="reply_btn" title="Reply"><i class="fas fa-comment"></i></button>
-                            </div>
-                          </div>
-                        </div>
-                        <Comment v-for="comment in commentsData" :comment="comment.commentInfo" :diff="comment.diff" :commentText="comment.comment_text" :key="comment.comment_id" />
-                        <div class="CM_show_more_container">
-                          <button class="CM_show_more_btn" name="button">SHOW MORE COMMENTS <i class="fas fa-arrow-circle-right"></i></button>
-                        </div>
-                      </div>
-
-                      <div v-if="videoData._video_ && videoComponent === 'related'" class="RC_main_container">
-                        <RelatedCard v-for="video in videoData._RC_videos_" :video="video" :key="video.video_id" :get_object_key="get_object_key" />
-                        <div class="RC_more_videos_container">
-                          <button class="RC_more_videos_btn">SHOW MORE VIDEOS</button>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
                 </div>
               </div>
               <!-- INJECT REPLY -->
             </div>
           </div>
         <!-- WP_page_container -->
+
+        <Reply v-if="$store.state.showReply" />
+
+        <Footer :currentPage="'videos'" />
+
+        <div :style="videoComponent ? `transform: translateY(0)`: `transform: translateY(100vh)`" class="WP_content_main_container">
+          <div class="WP_content_container">
+
+            <div class="WP_close_content_container">
+              <button @click="videoComponent = ''" class="WP_close_content_btn">Close</button>
+            </div>
+            <!-- REQUIRE IN CONTENT -->
+            <MediaDescription v-if="videoData._video_ && videoComponent === 'description'" :description="videoData" :toggleDescription="toggleDescription" />
+
+            <div v-if="videoData._video_ && videoComponent === 'comments'" class="CM_main_comments_container">
+              <div class="CM_comments_header_container">
+                <div class="CM_comments_header">
+                  <div class="CM_info_container">
+                    <h2 class="CM_comment_count">{{ commentCount.comments }} <i class="fas fa-comments"></i> Comments</h2>
+                  </div>
+                  <div class="CM_reply_btn_container">
+                    <button @click="$store.commit('toggleReply')" class="CM_reply_btn" name="reply_btn" title="Reply"><i class="fas fa-comment"></i></button>
+                  </div>
+                </div>
+              </div>
+              <Comments v-for="comment in commentsData" :comment="comment.commentInfo" :diff="comment.diff" :commentText="comment.comment_text" :key="comment.comment_id" />
+              <div class="CM_show_more_container">
+                <button class="CM_show_more_btn" name="button">SHOW MORE COMMENTS <i class="fas fa-arrow-circle-right"></i></button>
+              </div>
+            </div>
+
+            <div v-if="videoData._video_ && videoComponent === 'related'" class="RC_main_container">
+              <RelatedCard v-for="video in videoData._RC_videos_" :video="video" :key="video.video_id" />
+              <div class="RC_more_videos_container">
+                <button class="RC_more_videos_btn">SHOW MORE VIDEOS</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
       </div>
       <!-- WP_main_page_container -->

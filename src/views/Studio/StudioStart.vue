@@ -6,7 +6,7 @@
       </div>
       <div class="ST_start_action_container">
         <div class="ST_start_btn_container">
-          <button @click="changeSession('type')" class="ST_start_btn"><i class="fas fa-long-arrow-alt-right"></i> Let's Get Started!</button>
+          <button :disabled="!$store.state.isActiveUserLoggedIn" @click="changeSession('type')" class="ST_start_btn"><i class="fas fa-long-arrow-alt-right"></i> Let's Get Started!</button>
         </div>
         <div class="ST_info_container">
           <button class="ST_info_btn"><i class="fas fa-info-circle"></i> Tell Me More!</button>

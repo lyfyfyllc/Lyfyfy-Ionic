@@ -29,12 +29,12 @@ export default {
       if (this.SigninSession === 'email') {
 
         this.SigninSession = ''
-        setTimeout(() => { this.SigninSession = 'password' }, 300)
+        setTimeout(() => { this.SigninSession = 'password' }, 200)
 
       } else if (this.SigninSession === 'password') {
 
         this.SigninSession = ''
-        setTimeout(() => { this.SigninSession = 'email' }, 300)
+        setTimeout(() => { this.SigninSession = 'email' }, 200)
 
       }
     },
@@ -44,7 +44,7 @@ export default {
       window.sessionStorage.setItem('sessionPassword', '')
 
       this.SigninSession = ''
-      setTimeout(() => { this.SigninSession = 'email' }, 300)
+      setTimeout(() => { this.SigninSession = 'email' }, 200)
 
     }
   },

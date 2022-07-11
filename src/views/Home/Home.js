@@ -82,6 +82,8 @@ export default {
     else if (this.homeSession === "posts") this.fetchPostCardData()
     else this.fetchMediaCardData()
 
+    document.body.style.background = "linear-gradient(to bottom right, rgba(44, 44, 84, 1), rgba(64, 64, 122, 1))"
+
   },
   created() {
 

@@ -23,11 +23,29 @@ export default class FetchGet {
     if (!this.apiToken) return
 
     await fetch(`${ this.host }${ url }&apiToken=${ this.apiToken }`)
-    .then(res => res.text())
+    .then(res => res.json())
     .then(data => {
       if (func && typeof func == "function") func(data)
       else return data
     })
+
+  }
+
+  async sendData(clientID, url, formData, func = false) {
+
+    try {
+
+      await fetch(`${ this.host }${ url }&apiToken=${ this.apiToken }&clientSideID=${ clientID }`, {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (func && typeof func == "function") func(data)
+        else return data
+      })
+
+    } catch (e) { console.log(e) }
 
   }
 

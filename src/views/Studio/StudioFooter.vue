@@ -4,13 +4,13 @@
 
       <div class="ST_footer_actions_container">
         <div class="ST_footer_back_container">
-          <button @click="navBack" class="ST_footer_back_btn"><i class="fas fa-long-arrow-alt-left"></i></button>
+          <button :disabled="!back" @click="changeSession(backSession)" class="ST_footer_back_btn"><i class="fas fa-long-arrow-alt-left"></i></button>
         </div>
         <div class="ST_footer_menu_container">
           <button @click="toggleStudioSidebar" class="ST_footer_menu_btn"><i class="fas fa-bars"></i></button>
         </div>
         <div class="ST_footer_forward_container">
-          <button @click="navForward" class="ST_footer_forward_btn"><i class="fas fa-long-arrow-alt-right"></i></button>
+          <button :disabled="!next" @click="changeSession(nextSession)" class="ST_footer_forward_btn"><i class="fas fa-long-arrow-alt-right"></i></button>
         </div>
       </div>
 
@@ -24,8 +24,8 @@
     position: sticky;
       bottom: 0;
     text-align: center;
-    background: rgba(44, 44, 84, 1);
-    border-top: solid 2px rgba(71, 71, 135, 1);
+    /* background: rgba(44, 44, 84, 1); */
+    /* border-top: solid 2px rgba(71, 71, 135, 1); */
   }
 
   .ST_footer_container {
@@ -61,8 +61,9 @@
 <script>
   export default {
     props: [
-      'navBack',
-      'navForward',
+      'postSessions',
+      'videoSessions',
+      'changeSession',
       'studioRestart',
       'studioSession',
       'studioTracker',
@@ -70,8 +71,56 @@
     ],
     data() {
       return {
-
+        back: false,
+        next: false,
+        backSession: false,
+        nextSession: false,
       }
+    },
+    watch: {
+      studioSession: function(newVal, oldVal) {
+
+        this.next = false
+
+        if (this.studioSession !== 'start') this.back = true
+        else this.back = false
+
+        let sessions = ['start', 'type'];
+
+        if (this.studioTracker.type) {
+
+          if (this.studioTracker.type === "post") sessions = this.postSessions
+          else if (this.studioTracker.type === "video") sessions = this.videoSessions
+
+          for (let i = 0; i < sessions.length; i++) {
+            if (sessions[i] === newVal) {
+              this.backSession = sessions[i - 1]
+              this.nextSession = sessions[i + 1]
+              break;
+            }
+          }
+
+          if (this.studioTracker.type) {
+            if (this.studioTracker.type && (this.studioSession === "type" || this.studioSession === "start")) {
+             this.next = true
+           } else if (this.studioTracker.type === "post") {
+              if (this.studioTracker.post[this.studioSession]) this.next = true
+            } else if (this.studioTracker.type === "video") {
+              if (this.studioTracker.video[this.studioSession]) this.next = true
+            }
+          }
+
+        } else {
+          if (this.studioSession === "type") {
+            this.backSession = "start"
+          }
+          if (this.studioSession === "start") {
+            this.nextSession = "type"
+          }
+        }
+
+
+      },
     }
   }
 </script>

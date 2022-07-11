@@ -1,5 +1,5 @@
 <template>
-  <div :style="showStudioSidebar ? 'transform: translateY(0)' : 'transform: translateY(100vh)'" class="ST_sidebar_main_container">
+  <div :style="showStudioSidebar ? 'transform: translateY(0)' : 'transform: translateY(200vh)'" class="ST_sidebar_main_container">
     <div class="ST_sidebar_container">
 
       <div class="ST_sidebar_close_container">
@@ -11,21 +11,26 @@
       </div>
 
       <div class="ST_sidebar_type_container">
-        <button @click="changeSession('type'), toggleStudioSidebar()" class="ST_sidebar_type"><i class="fas fa-random"></i> Type</button>
+        <button :style="!studioTracker.type ? 'opacity: 0.4' : ''" :disabled="!studioTracker.type"
+        @click="changeSession('type'), toggleStudioSidebar()" class="ST_sidebar_type"><i class="fas fa-random"></i> Type</button>
       </div>
 
       <div v-if="studioTracker.type === 'post'" class="ST_sidebar_post_container">
         <div class="ST_sidebar_postText_container">
-          <button @click="changeSession('postText'), toggleStudioSidebar()" class="ST_sidebar_postText"><i class="fas fa-pencil-alt"></i> Post</button>
+          <button :style="!studioTracker.post.postText ? 'opacity: 0.4' : ''" :disabled="!studioTracker.post.postText"
+          @click="changeSession('postText'), toggleStudioSidebar()" class="ST_sidebar_postText"><i class="fas fa-pencil-alt"></i> Post</button>
         </div>
         <div class="ST_sidebar_postMedia_container">
-          <button @click="changeSession('postMedia'), toggleStudioSidebar()" class="ST_sidebar_postMedia"><i class="fas fa-image"></i> Image</button>
+          <button :style="!studioTracker.post.postMedia ? 'opacity: 0.4' : ''" :disabled="!studioTracker.post.postMedia"
+          @click="changeSession('postMedia'), toggleStudioSidebar()" class="ST_sidebar_postMedia"><i class="fas fa-image"></i> Image</button>
         </div>
         <div class="ST_sidebar_categories_container">
-          <button @click="changeSession('categories'), toggleStudioSidebar()" class="ST_sidebar_categories"><i class="fas fa-filter"></i> Categories</button>
+          <button :style="!studioTracker.post.categories ? 'opacity: 0.4' : ''" :disabled="!studioTracker.post.categories"
+          @click="changeSession('categories'), toggleStudioSidebar()" class="ST_sidebar_categories"><i class="fas fa-filter"></i> Categories</button>
         </div>
         <div class="ST_sidebar_upload_container">
-          <button @click="changeSession('postReview'), toggleStudioSidebar()" class="ST_sidebar_upload"><i class="fas fa-download"></i> Upload</button>
+          <button :style="!studioTracker.post.postReview ? 'opacity: 0.4' : ''" :disabled="!studioTracker.post.postReview"
+          @click="changeSession('postReview'), toggleStudioSidebar()" class="ST_sidebar_upload"><i class="fas fa-download"></i> Upload</button>
         </div>
       </div>
 
@@ -44,12 +49,13 @@
         </div>
       </div>
 
-      <div class="ST_sidebar_exit_container">
-        <button @click="endSession" class="ST_sidebar_exit"><i class="fas fa-long-arrow-alt-left"></i> Exit Studio</button>
+      <div class="ST_sidebar_restart_container">
+        <button :style="!studioTracker.type ? 'opacity: 0.4' : ''" :disabled="!studioTracker.type"
+        @click="studioRestart" class="ST_sidebar_restart_btn"><i class="fas fa-undo-alt"></i>Restart</button>
       </div>
 
-      <div class="ST_sidebar_restart_container">
-        <button @click="studioRestart" class="ST_sidebar_restart_btn"><i class="fas fa-undo-alt"></i>Restart Session</button>
+      <div class="ST_sidebar_exit_container">
+        <button @click="endSession" class="ST_sidebar_exit"><i class="fas fa-long-arrow-alt-left"></i> Exit Studio</button>
       </div>
 
     </div>
@@ -63,6 +69,7 @@
     transition: .4s;
     position: fixed;
       bottom: 0;
+    transform: translateY(200vh);
   }
 
   .ST_sidebar_container {
@@ -88,7 +95,7 @@
   }
 
   .ST_sidebar_container div button:hover {
-    color: rgba(162, 155, 254, 1);
+    opacity: 0.5
   }
 
   .ST_sidebar_container div button i {

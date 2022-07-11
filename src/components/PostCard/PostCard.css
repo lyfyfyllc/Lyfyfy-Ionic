@@ -201,10 +201,12 @@
   font-size: 1.8em;
   overflow: hidden;
   margin-top: .2em;
+  white-space: pre-line;
   display: -webkit-box;
   /* font-weight: lighter; */
   -webkit-line-clamp: 2;
   /* word-break: break-all; */
+  /* word-wrap: break-word; */
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   font-family: 'Montserrat', sans-serif;

@@ -210,7 +210,8 @@
     bottom: 0;
   transition: .4s;
   overflow-y: auto;
-  max-height: 60vh;
+  min-height: 70vh;
+  max-height: 70vh;
   transform: translateY(100vh);
 
   scrollbar-width: none;
@@ -219,6 +220,7 @@
 .WP_content_container {
   width: 60%;
   margin: auto;
+  min-height: 70vh;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   background: rgba(64, 64, 122, 1);
@@ -242,7 +244,7 @@
 }
 
 .WP_content_description_tab_container {
-  border-left: solid 2px rgba(112, 111, 211, 1);
+  /* border-left: solid 2px rgba(112, 111, 211, 1); */
 }
 
 .WP_content_tab .WP_content_tab_selected {
@@ -260,7 +262,7 @@
 
 .WP_content_related_tab_container {
   /* display: none; */
-  border-right: solid 2px rgba(112, 111, 211, 1);
+  /* border-right: solid 2px rgba(112, 111, 211, 1); */
 }
 
 @media only screen and (max-width: 1300px) {
@@ -378,7 +380,7 @@
   }
 
   .WP_MediaPlayer {
-    z-index: 508;
+    z-index: 518;
     position: sticky;
       top: 0;
   }

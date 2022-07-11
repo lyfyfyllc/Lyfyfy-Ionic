@@ -1,6 +1,6 @@
 .OP_main_container {
   width: 100%;
-  z-index: 512;
+  z-index: 522;
   /* display: none; */
   height: 100vh;
   position: fixed;
@@ -12,7 +12,7 @@
 .OP_container {
   width: 30%;
   margin: auto;
-  z-index: 510;
+  z-index: 520;
   max-height: 100vh;
   overflow-y: scroll;
 
