@@ -25,8 +25,8 @@ export default createStore({
     playlistLooping: false,
     showVideoAnchor: false,
     isActiveUserLoggedIn: false,
-    // MainServer: 'https://api.lyfyfy.com',
-    MainServer: 'http://localhost:8090',
+    MainServer: 'https://api.lyfyfy.com',
+    // MainServer: 'http://localhost:8090',
     SigninServer: 'http://localhost:8090',
   },
   mutations: {
